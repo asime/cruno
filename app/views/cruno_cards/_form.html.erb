@@ -1,0 +1,26 @@
+<%= form_for(@cruno_card) do |f| %>
+  <% if @cruno_card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cruno_card.errors.count, "error") %> prohibited this cruno_card from being saved:</h2>
+
+      <ul>
+      <% @cruno_card.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :value %><br />
+    <%= f.text_field :value %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br />
+    <%= f.text_field :color %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <%= link_to 'Deal this card', {:action => 'dealspecific', :id => @cruno_card, :player => Player.find(1) }, :class => 'dealspecific' %><br/>
+<% end %>

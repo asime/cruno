@@ -1,0 +1,2 @@
+module CrunoCardsHelper
+end

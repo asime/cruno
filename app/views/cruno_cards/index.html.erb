@@ -1,0 +1,25 @@
+<h1>Listing cruno_cards</h1>
+
+<table>
+  <tr>
+    <th>Value</th>
+    <th>Color</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cruno_cards.each do |cruno_card| %>
+  <tr>
+    <td><%= cruno_card.value %></td>
+    <td><%= cruno_card.color %></td>
+    <td><%= link_to 'Show', cruno_card %></td>
+    <td><%= link_to 'Edit', edit_cruno_card_path(cruno_card) %></td>
+    <td><%= link_to 'Destroy', cruno_card, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cruno card', new_cruno_card_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Value:</b>
+  <%= @cruno_card.value %>
+</p>
+
+<p>
+  <b>Color:</b>
+  <%= @cruno_card.color %>
+</p>
+
+<p>
+  <b>Player:</b>
+  <% if @cruno_card.player == nil %>
+  <%= 'Not assigned' %>
+  <% else %>
+  <%= @cruno_card.player.name %>
+  <% end %>
+</p>
+
+<p>
+  <b>Full Card Inspect:</b>
+  START<%= @cruno_card.inspect %>END<br/>
+</p>
+
+
+<%= link_to 'Edit', edit_cruno_card_path(@cruno_card) %> |
+<%= link_to 'Back', cruno_cards_path %>
